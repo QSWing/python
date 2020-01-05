@@ -2,7 +2,7 @@
 
 
 ## 总结说明
-### [Github URL](https://github.com/QSWing/python)
+### * [Github URL](https://github.com/QSWing/python)
 
 ### HTML文档：
       results.html:简单介绍可视化故事和结论以及放入基本按钮
