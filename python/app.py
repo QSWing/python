@@ -3,25 +3,24 @@
 
 # In[ ]:
 
+
 from random import randrange
 from flask import Flask, render_template, request
 import pandas as pd
 import csv, os
-
-from fu import jup,jns,co,oc,zh
 # 模块读进来,
 app = Flask(__name__)
 
-d2 = pd.read_csv('C:/ST/python/again/data/suiciderate5.csv') #世界近年各国自杀率
-d4 = pd.read_csv('C:/ST/python/again/data/sun.csv') #世界各国日照率
-d5 = pd.read_csv('C:/ST/python/again/data/compare.csv',encoding="gbk")#全球近年分年龄段自杀率
-d6 = pd.read_csv('C:/ST/python/again/data/suicidebysex.csv',encoding="gbk")#全球近年性别自杀率
-d7 = pd.read_csv('C:/ST/python/again/data/work.csv',encoding="gbk")#全球近年男女参与劳动率
+d2 = pd.read_csv('C:/ST/python/again1/data/suiciderate5.csv') #世界近年各国自杀率
+d4 = pd.read_csv('C:/ST/python/again1/data/sun.csv') #世界各国日照率
+d5 = pd.read_csv('C:/ST/python/again1/data/compare.csv',encoding="gbk")#全球近年分年龄段自杀率
+d6 = pd.read_csv('C:/ST/python/again1/data/suicidebysex.csv',encoding="gbk")#全球近年性别自杀率
+d7 = pd.read_csv('C:/ST/python/again1/data/work.csv',encoding="gbk")#全球近年男女参与劳动率
 
 
 dict = { "世界各国日照率" : d4, "世界近年各国自杀率" : d2 ,"全球近年分年龄段自杀率" : d5, "全球近年男女参与劳动率" : d7,"全球近年性别自杀率":d6}#选择字典
 
-regions_available_loaded = ['世界近年各国自杀率','世界各国日照率','全球近年性别自杀率','全球近年分年龄段自杀率','全球近年男女参与劳动率']#选框内容
+regions_available_loaded = ['世界各国日照率','世界近年各国自杀率','全球近年分年龄段自杀率','全球近年男女参与劳动率','全球近年性别自杀率',]#选框内容
 
 
 @app.route('/',methods=['GET'])
@@ -44,28 +43,23 @@ def run_select() -> 'html':
 
     #制作图表切换效果
     if the_region =="世界近年各国自杀率":
-        G=jup()
-        with open("C:/ST/python/again/1.html", encoding="utf8", mode="r") as f:
+        with open("C:/ST/python/again1/1.html", encoding="utf8", mode="r") as f:
             plot_all = "".join(f.readlines())  
             
     elif the_region=="世界各国日照率":
-        J=jns()
-        with open("C:/ST/python/again/2.html", encoding="utf8", mode="r") as f:
+        with open("C:/ST/python/again1/2.html", encoding="utf8", mode="r") as f:
             plot_all = "".join(f.readlines())
             
     elif the_region=="全球近年分年龄段自杀率":
-        H=zh()
-        with open("C:/ST/python/again/3.html", encoding="utf8", mode="r") as f:
+        with open("C:/ST/python/again1/3.html", encoding="utf8", mode="r") as f:
             plot_all = "".join(f.readlines())
      
     elif the_region=="全球近年性别自杀率":
-        C=co()
-        with open("C:/ST/python/again/4.html", encoding="utf8", mode="r") as f:
+        with open("C:/ST/python/again1/4.html", encoding="utf8", mode="r") as f:
             plot_all = "".join(f.readlines())
         
     elif the_region=="全球近年男女参与劳动率":
-        O=oc()
-        with open("C:/ST/python/again/5.html", encoding="utf8", mode="r") as f:
+        with open("C:/ST/python/again1/5.html", encoding="utf8", mode="r") as f:
             plot_all = "".join(f.readlines())
         
    
