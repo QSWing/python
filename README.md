@@ -3,7 +3,7 @@
 
 ## 总结说明
 ### 1.[Github URL](https://github.com/QSWing/python)
-### 2.[pythonanywhere URL](QSWing.pythonanywhere.com )
+### 2.[pythonanywhere URL](QSWing.pythonanywhere.com)
 ### 3.HTML文档：
       results.html:简单介绍可视化故事和结论以及放入基本按钮
       1.html：世界近年各国自杀率的可视化图表
