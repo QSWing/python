@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化故事</title>
+    <link rel="stylesheet" href="static/hf.css" />
+</head>
+
+<body>
+
+<div>
+    <h1>自杀死亡-地区-年龄-性别-可视化故事</h1>
+    <h2>自杀死亡是一个非常复杂的问题，自杀不仅仅是一个人生命的结束，更是成千上万人的痛苦，每一次自杀都是悲剧。世界卫生组织（WHO）和全球疾病负担研究估计，每年有近80万人死于自杀，这几乎是每40秒便有一个人选择了自杀。</h2>
+    <h2>我尝试从三个方面探寻自杀死亡方面的数据故事，分别是**地区**、**年龄**、**性别**，每一个部分都能挖掘一些新的故事点。</h2>
+</div>
+
+<table><h4>点击此处切换可视化交互图</h4>
+<tr>
+    <td>
+        <form method="POST" action="/qw">
+        <select name="the_region_selected">
+        {% for item in the_select_region %}
+            <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+        </select>
+    </td>
+<td>
+    <p><input value='切换' type='SUBMIT'></p></tr></table>
+</form>
+
+<h3>可视化交互图</h3>
+{{ the_plot_all|safe }}
+<h3>数据表单</h3>
+{{ the_res|safe }}
+
+
+
+
+
+</body>
+</html>
